@@ -178,11 +178,6 @@ img{max-width:100%;display:block}
 .info-card p{margin:0 0 6px;color:var(--muted)}
 .muted{color:var(--muted);font-size:13px}
 
-/* Бренды */
-.brands{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.brands span{display:grid;place-items:center;height:76px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--navy);font-weight:800;letter-spacing:1px;font-size:17px}
-.brands span:hover{border-color:var(--blue-2);color:var(--blue)}
-
 /* Контакты */
 .contacts{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;padding:10px 0}
 .section--dark h2{font-size:clamp(24px,2.6vw,32px);margin:0 0 16px}
@@ -252,7 +247,6 @@ img{max-width:100%;display:block}
   .products{grid-template-columns:repeat(3,1fr)}
   .nav__inner{gap:18px}
   .header__action span:not(.badge){display:none}
-  .brands{grid-template-columns:repeat(4,1fr)}
 }
 @media (max-width:900px){
   .topbar__links,.topbar__item--hide-sm{display:none}
@@ -281,7 +275,6 @@ img{max-width:100%;display:block}
   .header__phone{display:none}
   .header__actions{gap:14px}
   .products,.categories{grid-template-columns:repeat(2,1fr)}
-  .brands{grid-template-columns:repeat(2,1fr)}
   .features__grid{grid-template-columns:1fr}
   .section{padding:36px 0}
   .contacts__map{height:240px}
