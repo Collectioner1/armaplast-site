@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>АрмаПласт — трубы, фитинги и сантехническая арматура</title>
+  <meta name="description" content="АрмаПласт — оптом и в розницу: трубы, фитинги, запорная арматура, насосы и товары для отопления. Доставка по России, самовывоз со склада.">
+  <meta name="theme-color" content="#151f34">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<!-- Верхняя служебная полоса -->
+<div class="topbar">
+  <div class="container topbar__inner">
+    <div class="topbar__info">
+      <span class="topbar__item"><span class="dot dot--green"></span>Приём заказов: пн–сб 09:00–19:00</span>
+      <span class="topbar__item topbar__item--hide-sm">Самовывоз: пн–пт 09:00–17:00</span>
+    </div>
+    <div class="topbar__links">
+      <a href="#brands">Бренды</a>
+      <a href="#delivery">Доставка</a>
+      <a href="#payment">Оплата</a>
+      <a href="#returns">Возврат</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+  </div>
+</div>
+
+<!-- Шапка -->
+<header class="header">
+  <div class="container header__inner">
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a class="logo" href="#main" aria-label="АрмаПласт — на главную">
+      <img src="assets/img/logo.svg" alt="" width="44" height="44">
+      <span class="logo__text"><strong>АрмаПласт</strong><small>инженерные решения для дома</small></span>
+    </a>
+
+    <form class="search" id="searchForm" role="search">
+      <input id="searchInput" type="search" placeholder="Поиск по каталогу: трубы, фитинги, клапаны…" aria-label="Поиск по каталогу" autocomplete="off">
+      <button type="submit" aria-label="Найти">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2a8 8 0 105.3 14l5.4 5.4 1.4-1.4-5.4-5.4A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
+      </button>
+    </form>
+
+    <div class="header__actions">
+      <a class="header__action" href="#favorites" aria-label="Избранное">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-4.9-8-10.4A4.6 4.6 0 0112 7.7a4.6 4.6 0 018 2.9C20 16.1 12 21 12 21z"/></svg>
+        <span>Избранное</span>
+      </a>
+      <a class="header__action" href="#cart" aria-label="Корзина">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4zM7.2 14h9.6l3-8H6.3L5 3H2v2h2l3.6 9.1-1.2 2.2A2 2 0 006.5 17H19v-2H7.2z"/></svg>
+        <span>Корзина</span><span class="badge" id="cartCount">0</span>
+      </a>
+      <div class="header__phone">
+        <a href="tel:+78312000000">+7 (831) 200-00-00</a>
+        <button class="link-button" data-modal-open>Заказать звонок</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Основная навигация -->
+  <nav class="nav" aria-label="Основная навигация">
+    <div class="container nav__inner">
+      <button class="catalog-btn" id="catalogBtn" aria-expanded="false" aria-controls="catalogMenu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+        Каталог
+      </button>
+      <a class="nav__link" href="#promo">Акции</a>
+      <a class="nav__link" href="#categories">Сантехника</a>
+      <a class="nav__link" href="#products">Популярное</a>
+      <a class="nav__link" href="#about">О компании</a>
+      <a class="nav__link" href="#delivery">Доставка и оплата</a>
+      <a class="nav__link nav__link--accent" href="#contacts">Контакты</a>
+    </div>
+  </nav>
+
+  <!-- Mega-меню каталога -->
+  <div class="catalog-menu" id="catalogMenu" hidden>
+    <div class="container catalog-menu__inner">
+      <ul class="catalog-menu__list">
+        <li><a href="#categories">Трубы и фитинги <span>→</span></a></li>
+        <li><a href="#categories">Запорная арматура <span>→</span></a></li>
+        <li><a href="#categories">Насосное оборудование <span>→</span></a></li>
+        <li><a href="#categories">Отопление <span>→</span></a></li>
+        <li><a href="#categories">Водоснабжение и канализация <span>→</span></a></li>
+        <li><a href="#categories">Приборы учёта <span>→</span></a></li>
+        <li><a href="#categories">Инструменты и расходники <span>→</span></a></li>
+      </ul>
+      <div class="catalog-menu__panel">
+        <h3>Популярные разделы</h3>
+        <div class="catalog-menu__chips">
+          <a href="#products">Полипропиленовые трубы</a>
+          <a href="#products">Краны шаровые</a>
+          <a href="#products">Циркуляционные насосы</a>
+          <a href="#products">Радиаторы отопления</a>
+          <a href="#products">Фильтры для воды</a>
+          <a href="#products">Герметики и уплотнители</a>
+        </div>
+        <p class="catalog-menu__note">Не нашли нужный товар? <a href="tel:+78312000000">Позвоните нам</a> — подберём аналог по спецификации.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- Герой -->
+  <section class="hero" id="promo" aria-label="Акции">
+    <div class="container hero__grid">
+      <article class="slide slide--active" data-slide>
+        <div class="slide__content">
+          <span class="slide__label">Скидка до 25%</span>
+          <h1>Трубы и фитинги<br>для надёжного водопровода</h1>
+          <p>Полипропилен, ПНД и металлопластик в наличии на складе. Подберём комплект под ваш проект.</p>
+          <a class="btn btn--light" href="#products">Смотреть каталог</a>
+        </div>
+        <div class="slide__art" aria-hidden="true">
+          <img src="assets/img/hero-pipes.svg" alt="">
+        </div>
+      </article>
+      <article class="slide" data-slide hidden>
+        <div class="slide__content">
+          <span class="slide__label">Готовые решения</span>
+          <h2>Отопление под ключ:<br>радиаторы, котлы, насосы</h2>
+          <p>Рассчитаем мощность, подберём оборудование и доставим всё в один день.</p>
+          <a class="btn btn--light" href="#categories">Выбрать оборудование</a>
+        </div>
+        <div class="slide__art" aria-hidden="true">
+          <img src="assets/img/hero-heating.svg" alt="">
+        </div>
+      </article>
+      <article class="slide" data-slide hidden>
+        <div class="slide__content">
+          <span class="slide__label">Для мастеров</span>
+          <h2>Арматура и расходники<br>со склада в день заказа</h2>
+          <p>Более 4 000 позиций для монтажа. Оптовые цены и отсрочка для постоянных клиентов.</p>
+          <a class="btn btn--light" href="#contacts">Узнать условия</a>
+        </div>
+        <div class="slide__art" aria-hidden="true">
+          <img src="assets/img/hero-valve.svg" alt="">
+        </div>
+      </article>
+      <button class="hero__arrow hero__arrow--prev" id="slidePrev" aria-label="Предыдущий слайд">‹</button>
+      <button class="hero__arrow hero__arrow--next" id="slideNext" aria-label="Следующий слайд">›</button>
+      <div class="hero__dots" id="slideDots" aria-label="Выбрать слайд"></div>
+    </div>
+  </section>
+
+  <!-- Преимущества -->
+  <section class="features">
+    <div class="container features__grid">
+      <div class="feature"><span class="feature__icon">▣</span><div><strong>4 000+ позиций</strong><small>Всё для сантехники и отопления</small></div></div>
+      <div class="feature"><span class="feature__icon">↗</span><div><strong>Доставка за 1 день</strong><small>По городу и в регионы</small></div></div>
+      <div class="feature"><span class="feature__icon">% </span><div><strong>Оптовые цены</strong><small>Скидки от объёма заказа</small></div></div>
+      <div class="feature"><span class="feature__icon">✓</span><div><strong>Гарантия качества</strong><small>Официальные поставки и документы</small></div></div>
+    </div>
+  </section>
+
+  <!-- Категории -->
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section__head">
+        <h2>Каталог товаров</h2>
+        <a class="more" href="#products">Весь каталог →</a>
+      </div>
+      <div class="categories" id="categoryGrid">
+        <a class="category" href="#products"><img src="assets/img/cat-pipe.svg" alt=""><span>Трубы и фитинги</span><small>ПП, ПНД, металлопластик</small></a>
+        <a class="category" href="#products"><img src="assets/img/cat-valve.svg" alt=""><span>Запорная арматура</span><small>Краны, клапаны, редукторы</small></a>
+        <a class="category" href="#products"><img src="assets/img/cat-pump.svg" alt=""><span>Насосы</span><small>Циркуляционные, скважинные</small></a>
+        <a class="category" href="#products"><img src="assets/img/cat-radiator.svg" alt=""><span>Отопление</span><small>Радиаторы, котлы, тёплый пол</small></a>
+        <a class="category" href="#products"><img src="assets/img/cat-filter.svg" alt=""><span>Водоснабжение</span><small>Фильтры, счётчики, подводка</small></a>
+        <a class="category" href="#products"><img src="assets/img/cat-tools.svg" alt=""><span>Инструменты</span><small>Паяльники, ключи, расходники</small></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Популярные товары -->
+  <section class="section section--soft" id="products">
+    <div class="container">
+      <div class="section__head">
+        <h2>Популярные товары</h2>
+        <div class="filters" id="filters" role="group" aria-label="Фильтр товаров">
+          <button class="filter filter--active" data-filter="all">Все</button>
+          <button class="filter" data-filter="pipes">Трубы</button>
+          <button class="filter" data-filter="valves">Арматура</button>
+          <button class="filter" data-filter="pumps">Насосы</button>
+          <button class="filter" data-filter="heating">Отопление</button>
+        </div>
+      </div>
+      <p class="search-message" id="searchMessage" hidden></p>
+      <div class="products" id="productGrid">
+        <article class="product" data-category="pipes" data-name="Труба ППР 20 мм PN20">
+          <span class="product__badge">Хит</span>
+          <div class="product__img"><img src="assets/img/product-pipe.svg" alt="Труба ППР"></div>
+          <h3>Труба ППР 20 мм PN20</h3>
+          <p class="product__code">Артикул: AP-PP-20</p>
+          <div class="product__bottom"><strong>89 ₽/м</strong><button class="btn btn--small add-to-cart">В корзину</button></div>
+        </article>
+        <article class="product" data-category="valves" data-name="Кран шаровой 1/2&quot; латунь">
+          <span class="product__badge product__badge--sale">−18%</span>
+          <div class="product__img"><img src="assets/img/product-valve.svg" alt="Кран шаровой"></div>
+          <h3>Кран шаровой 1/2" латунь</h3>
+          <p class="product__code">Артикул: AP-BV-15</p>
+          <div class="product__bottom"><strong>420 ₽</strong><button class="btn btn--small add-to-cart">В корзину</button></div>
+        </article>
+        <article class="product" data-category="pumps" data-name="Насос циркуляционный 25/4">
+          <div class="product__img"><img src="assets/img/product-pump.svg" alt="Насос циркуляционный"></div>
+          <h3>Насос циркуляционный 25/4</h3>
+          <p class="product__code">Артикул: AP-CP-25</p>
+          <div class="product__bottom"><strong>5 890 ₽</strong><button class="btn btn--small add-to-cart">В корзину</button></div>
+        </article>
+        <article class="product" data-category="heating" data-name="Радиатор алюминиевый 500 мм">
+          <span class="product__badge product__badge--new">Новинка</span>
+          <div class="product__img"><img src="assets/img/product-radiator.svg" alt="Радиатор отопления"></div>
+          <h3>Радиатор алюминиевый 500 мм</h3>
+          <p class="product__code">Артикул: AP-AL-500</p>
+          <div class="product__bottom"><strong>1 250 ₽</strong><button class="btn btn--small add-to-cart">В корзину</button></div>
+        </article>
+        <article class="product" data-category="valves" data-name="Редуктор давления 3/4&quot;">
+          <div class="product__img"><img src="assets/img/product-valve.svg" alt="Редуктор давления"></div>
+          <h3>Редуктор давления 3/4"</h3>
+          <p class="product__code">Артикул: AP-RD-20</p>
+          <div class="product__bottom"><strong>1 780 ₽</strong><button class="btn btn--small add-to-cart">В корзину</button></div>
+        </article>
+        <article class="product" data-category="pipes" data-name="Фитинг ППР угловой 20×90°">
+          <div class="product__img"><img src="assets/img/product-fitting.svg" alt="Фитинг ППР"></div>
+          <h3>Фитинг ППР угловой 20×90°</h3>
+          <p class="product__code">Артикул: AP-EL-20</p>
+          <div class="product__bottom"><strong>65 ₽/шт</strong><button class="btn btn--small add-to-cart">В корзину</button></div>
+        </article>
+        <article class="product" data-category="pumps" data-name="Насос скважинный 1.5&quot; 3 м³/ч">
+          <div class="product__img"><img src="assets/img/product-pump.svg" alt="Скважинный насос"></div>
+          <h3>Насос скважинный 1,5" 3 м³/ч</h3>
+          <p class="product__code">Артикул: AP-SP-15</p>
+          <div class="product__bottom"><strong>8 450 ₽</strong><button class="btn btn--small add-to-cart">В корзину</button></div>
+        </article>
+        <article class="product" data-category="heating" data-name="Тёплый пол ПЭ-Х 16 мм">
+          <div class="product__img"><img src="assets/img/product-pipe.svg" alt="Труба для тёплого пола"></div>
+          <h3>Тёплый пол ПЭ-Х 16 мм</h3>
+          <p class="product__code">Артикул: AP-PEX-16</p>
+          <div class="product__bottom"><strong>115 ₽/м</strong><button class="btn btn--small add-to-cart">В корзину</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- О компании -->
+  <section class="section" id="about">
+    <div class="container about">
+      <div class="about__text">
+        <span class="eyebrow">О компании</span>
+        <h2>АрмаПласт — надёжность в каждой детали</h2>
+        <p>Мы поставляем инженерные материалы для частных домов, квартир и небольших строительных объектов. Работаем напрямую с производителями, поэтому держим стабильные цены и наличие на складе.</p>
+        <p>Помогаем подобрать комплект по проекту, считаем расход материалов и отвечаем за каждую позицию в накладной.</p>
+        <a class="btn" href="#contacts">Связаться с нами</a>
+      </div>
+      <div class="about__stats">
+        <div class="stat"><strong>12</strong><span>лет на рынке</span></div>
+        <div class="stat"><strong>4 000+</strong><span>позиций на складе</span></div>
+        <div class="stat"><strong>1 800+</strong><span>постоянных клиентов</span></div>
+        <div class="stat"><strong>96%</strong><span>заказов в срок</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Доставка и оплата -->
+  <section class="section section--soft" id="delivery">
+    <div class="container">
+      <div class="section__head"><h2>Доставка и оплата</h2></div>
+      <div class="cards">
+        <article class="info-card" id="delivery-card">
+          <div class="info-card__icon">🚚</div>
+          <h3>Доставка</h3>
+          <p>По городу — от 1 дня, в регионы — транспортными компаниями. Крупные заказы доставляем собственным транспортом.</p>
+          <p class="muted">Самовывоз со склада: пн–пт 09:00–17:00.</p>
+        </article>
+        <article class="info-card" id="payment">
+          <div class="info-card__icon">💳</div>
+          <h3>Оплата</h3>
+          <p>Наличными при получении, безналичный расчёт по счёту, картой онлайн. Для юрлиц — отсрочка по договору.</p>
+          <p class="muted">Все документы: чек, накладная, сертификаты.</p>
+        </article>
+        <article class="info-card" id="returns">
+          <div class="info-card__icon">↩</div>
+          <h3>Возврат и обмен</h3>
+          <p>Обмениваем товар надлежащего качества в течение 14 дней. Брак принимаем по гарантии в течение всего срока действия.</p>
+          <p class="muted">Решение по возврату — в течение 3 рабочих дней.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Бренды -->
+  <section class="section" id="brands">
+    <div class="container">
+      <div class="section__head"><h2>Бренды, с которыми мы работаем</h2></div>
+      <div class="brands">
+        <span>TEBO</span><span>VALFEX</span><span>STOUT</span><span>AQUATHERM</span>
+        <span>ROYAL</span><span>ZAZ</span><span>GRUNDFOS</span><span>HERZ</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section class="section section--dark" id="contacts">
+    <div class="container contacts">
+      <div>
+        <span class="eyebrow eyebrow--light">Контакты</span>
+        <h2>Приезжайте или звоните</h2>
+        <p>Нижний Новгород, ул. Арматурная, 8<br>Режим работы: пн–сб 09:00–19:00</p>
+        <p><a class="contacts__phone" href="tel:+78312000000">+7 (831) 200-00-00</a><br>
+           <a href="mailto:info@armaplast.example">info@armaplast.example</a></p>
+        <button class="btn btn--light" data-modal-open>Заказать звонок</button>
+      </div>
+      <div class="contacts__map" role="img" aria-label="Схематичная карта расположения склада">
+        <div class="map-grid"></div>
+        <div class="map-pin"><span>АрмаПласт</span></div>
+        <p>Схематичная карта · ул. Арматурная, 8</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="assets/img/logo.svg" alt="" width="38" height="38">
+      <strong>АрмаПласт</strong>
+      <p>Инженерные решения для дома и малого строительства.</p>
+    </div>
+    <div><h4>Покупателям</h4><a href="#delivery">Доставка</a><a href="#payment">Оплата</a><a href="#returns">Возврат</a><a href="#products">Каталог</a></div>
+    <div><h4>О компании</h4><a href="#about">О нас</a><a href="#brands">Бренды</a><a href="#contacts">Контакты</a></div>
+    <div><h4>Связаться</h4><a href="tel:+78312000000">+7 (831) 200-00-00</a><a href="mailto:info@armaplast.example">info@armaplast.example</a></div>
+  </div>
+  <div class="container footer__bottom"><span>© 2026 АрмаПласт. Демонстрационный сайт.</span><span>Сделано с заботой о качестве</span></div>
+</footer>
+
+<!-- Модальное окно -->
+<div class="modal" id="callModal" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal__close" data-modal-close aria-label="Закрыть">×</button>
+    <h2 id="modalTitle">Заказать звонок</h2>
+    <p>Оставьте номер — мы перезвоним в рабочее время и поможем с подбором.</p>
+    <form id="callForm">
+      <label>Ваш номер<input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required></label>
+      <button class="btn" type="submit">Отправить</button>
+      <p class="form-note">Демонстрационная форма: данные никуда не отправляются.</p>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
