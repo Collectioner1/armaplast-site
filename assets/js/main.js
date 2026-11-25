@@ -7,14 +7,29 @@
   /* Мобильное меню */
   const burger = $('#burger');
   const nav = $('.nav');
+  const mobileNav = () => window.matchMedia('(max-width: 900px)').matches;
+
+  const catalogBtn = $('#catalogBtn');
+  const catalogMenu = $('#catalogMenu');
+
+  function closeCatalogMenu() {
+    catalogMenu.hidden = true;
+    catalogBtn.setAttribute('aria-expanded', 'false');
+  }
+  function closeNav() {
+    if (!mobileNav()) return;
+    nav.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+  }
+
   burger.addEventListener('click', () => {
-    const open = nav.classList.toggle('is-open');
+    const open = !nav.classList.contains('is-open');
+    nav.classList.toggle('is-open', open);
     burger.setAttribute('aria-expanded', String(open));
+    if (!open) closeCatalogMenu();
   });
 
   /* Каталог */
-  const catalogBtn = $('#catalogBtn');
-  const catalogMenu = $('#catalogMenu');
   catalogBtn.addEventListener('click', () => {
     const open = catalogMenu.hidden;
     catalogMenu.hidden = !open;
@@ -22,9 +37,14 @@
   });
   document.addEventListener('click', (e) => {
     if (!catalogMenu.hidden && !catalogMenu.contains(e.target) && !catalogBtn.contains(e.target)) {
-      catalogMenu.hidden = true;
-      catalogBtn.setAttribute('aria-expanded', 'false');
+      closeCatalogMenu();
     }
+  });
+  $$('.nav__inner a, .catalog-menu a').forEach((link) => {
+    link.addEventListener('click', () => {
+      closeCatalogMenu();
+      closeNav();
+    });
   });
 
   /* Слайдер */
