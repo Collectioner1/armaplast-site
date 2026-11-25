@@ -98,13 +98,99 @@
 
   /* Корзина */
   const cartCount = $('#cartCount');
-  let count = 0;
+  const cartPanel = $('#cartPanel');
+  const cartItemsBox = $('#cartItems');
+  const cartEmpty = $('#cartEmpty');
+  const cartFoot = $('#cartFoot');
+  const cartTotalEl = $('#cartTotal');
+  const cart = new Map();
+
+  const money = (value) => value.toLocaleString('ru-RU') + ' ₽';
+
+  function productPrice(product) {
+    const text = $('.product__bottom strong', product).textContent;
+    return Number(text.replace(/[^\d]/g, ''));
+  }
+
+  function changeQty(name, delta) {
+    const item = cart.get(name);
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) cart.delete(name);
+    renderCart();
+  }
+
+  function renderCart() {
+    cartItemsBox.innerHTML = '';
+    let total = 0;
+    let quantity = 0;
+
+    cart.forEach((item, name) => {
+      total += item.price * item.qty;
+      quantity += item.qty;
+
+      const row = document.createElement('div');
+      row.className = 'cart__item';
+      row.innerHTML = `
+        <div>
+          <h3>${item.name}</h3>
+          <small>${money(item.price)} за шт.</small>
+          <div class="cart__controls">
+            <div class="cart__qty">
+              <button type="button" data-cart-minus aria-label="Уменьшить количество">−</button>
+              <span>${item.qty}</span>
+              <button type="button" data-cart-plus aria-label="Увеличить количество">+</button>
+            </div>
+            <button type="button" class="cart__remove" data-cart-remove>Удалить</button>
+          </div>
+        </div>
+        <strong class="cart__item-price">${money(item.price * item.qty)}</strong>`;
+
+      $('[data-cart-minus]', row).addEventListener('click', () => changeQty(name, -1));
+      $('[data-cart-plus]', row).addEventListener('click', () => changeQty(name, 1));
+      $('[data-cart-remove]', row).addEventListener('click', () => {
+        cart.delete(name);
+        renderCart();
+      });
+      cartItemsBox.appendChild(row);
+    });
+
+    cartCount.textContent = quantity;
+    cartEmpty.hidden = cart.size > 0;
+    cartFoot.hidden = cart.size === 0;
+    cartTotalEl.textContent = money(total);
+  }
+
   $$('.add-to-cart').forEach((button) => {
     button.addEventListener('click', () => {
-      count++;
-      cartCount.textContent = count;
-      showToast(`«${button.closest('.product').dataset.name}» добавлен в корзину`);
+      const product = button.closest('.product');
+      const name = product.dataset.name;
+      const price = productPrice(product);
+      const item = cart.get(name);
+      if (item) item.qty++;
+      else cart.set(name, { name, price, qty: 1 });
+      renderCart();
+      showToast(`«${name}» добавлен в корзину`);
     });
+  });
+
+  function openCart() {
+    cartPanel.hidden = false;
+    document.body.style.overflow = 'hidden';
+    $('.cart__close', cartPanel).focus();
+  }
+  function closeCart() {
+    cartPanel.hidden = true;
+    document.body.style.overflow = '';
+  }
+  $('#cartBtn').addEventListener('click', (event) => {
+    event.preventDefault();
+    openCart();
+  });
+  $$('[data-cart-close]', cartPanel).forEach((button) => button.addEventListener('click', closeCart));
+  $('#checkoutBtn').addEventListener('click', () => {
+    closeCart();
+    showToast('Заказ оформлен (демонстрация). Мы свяжемся с вами!');
   });
 
   /* Модальное окно */
@@ -119,7 +205,9 @@
   $$('[data-modal-open]').forEach((b) => b.addEventListener('click', openModal));
   $$('[data-modal-close]').forEach((b) => b.addEventListener('click', closeModal));
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
+    if (e.key !== 'Escape') return;
+    closeModal();
+    if (!cartPanel.hidden) closeCart();
   });
   $('#callForm').addEventListener('submit', (e) => {
     e.preventDefault();

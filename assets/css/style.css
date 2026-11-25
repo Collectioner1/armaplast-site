@@ -221,6 +221,31 @@ img{max-width:100%;display:block}
 .toast{position:fixed;bottom:24px;right:24px;background:var(--navy);color:#fff;padding:12px 18px;border-radius:6px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transform:translateY(10px);transition:.2s;z-index:120;font-size:13px}
 .toast.is-visible{opacity:1;transform:translateY(0)}
 
+/* Корзина */
+.cart{position:fixed;inset:0;z-index:110}
+.cart__backdrop{position:absolute;inset:0;background:rgba(12,20,36,.62)}
+.cart__panel{position:absolute;top:0;right:0;bottom:0;width:min(420px,100%);background:#fff;display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.28)}
+.cart__head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--line)}
+.cart__head h2{margin:0;font-size:22px;color:var(--navy)}
+.cart__close{border:0;background:none;font-size:28px;line-height:1;color:var(--muted)}
+.cart__body{flex:1;overflow:auto;padding:6px 24px}
+.cart__empty{padding:30px 24px;color:var(--muted);margin:0}
+.cart__item{display:grid;grid-template-columns:1fr auto;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.cart__item h3{margin:0 0 4px;font-size:14px;line-height:1.35}
+.cart__item small{display:block;color:var(--muted);font-size:12px}
+.cart__item-price{color:var(--navy);white-space:nowrap}
+.cart__controls{display:flex;align-items:center;gap:12px;margin-top:10px}
+.cart__qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:5px}
+.cart__qty button{border:0;background:none;width:28px;height:28px;font-size:17px;color:var(--blue)}
+.cart__qty span{min-width:24px;text-align:center;font-size:13px}
+.cart__remove{border:0;background:none;color:var(--muted);font-size:12px;text-decoration:underline}
+.cart__remove:hover{color:var(--red)}
+.cart__foot{padding:18px 24px 24px;border-top:1px solid var(--line)}
+.cart__total{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.cart__total strong{font-size:22px;color:var(--navy)}
+.cart__checkout{width:100%}
+.cart__foot .form-note{text-align:center;margin-top:10px !important}
+
 /* Адаптив */
 @media (max-width:1100px){
   .categories{grid-template-columns:repeat(3,1fr)}
