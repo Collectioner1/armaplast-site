@@ -88,6 +88,22 @@
     });
   });
 
+  /* Клик по категории в каталоге */
+  $$('.category[data-filter]').forEach((card) => {
+    card.addEventListener('click', (event) => {
+      event.preventDefault();
+      const value = card.dataset.filter;
+      const button = $(`.filter[data-filter="${value}"]`);
+      if (button) {
+        $$('.filter').forEach((b) => b.classList.remove('filter--active'));
+        button.classList.add('filter--active');
+        activeFilter = value;
+        applyFilters();
+      }
+      $('#products').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
   /* Поиск */
   $('#searchForm').addEventListener('submit', (e) => {
     e.preventDefault();
